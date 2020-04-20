@@ -29,16 +29,15 @@ public class ArrayDeque<T> {
         }
     }
 
-    public int minusOne(int index) {
+    private int minusOne(int index) {
         return Math.floorMod(index - 1, items.length);
     }
 
-
-    public int plusOne(int index) {
+    private int plusOne(int index) {
         return Math.floorMod(index + 1, items.length);
     }
 
-    public int plusOne(int index, int length) {
+    private int plusOne(int index, int length) {
         return Math.floorMod(index + 1, length);
     }
 
@@ -81,6 +80,9 @@ public class ArrayDeque<T> {
     }
 
     public T removeFirst() {
+        if (size == 0) {
+            return null;
+        }
         T res = items[plusOne(nextFirst)];
         nextFirst = plusOne(nextFirst);
         items[nextFirst] = null;
@@ -90,9 +92,13 @@ public class ArrayDeque<T> {
     }
 
     public T removeLast() {
+        if (size == 0) {
+            return null;
+        }
         T res = items[minusOne(nextLast)];
         nextLast = minusOne(nextLast);
         items[nextLast] = null;
+        size--;
         resize();
         return res;
     }
