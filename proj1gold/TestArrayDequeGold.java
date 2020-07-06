@@ -19,7 +19,7 @@ public class TestArrayDequeGold {
         for (int i = 0; i < 10; i++) {
             int actual = ads.get(i);
             int expected = sad.get(i);
-            assertEquals("ERROR in addLast()",
+            assertEquals("addLast(): "+actual,
                     expected, actual);
         }
 
@@ -31,7 +31,7 @@ public class TestArrayDequeGold {
         for (int i = 0; i < 10; i++) {
             int actual = ads.get(i);
             int expected = sad.get(i);
-            assertEquals("ERROR in addFirst()",
+            assertEquals("addFirst(): "+actual,
                     expected, actual);
         }
 
@@ -44,13 +44,13 @@ public class TestArrayDequeGold {
         for (int i = 0; i < 10; i++) {
             int actual = ads.get(i);
             int expected = sad.get(i);
-            assertEquals("ERROR in removeFirst()",
+            assertEquals("removeFirst(): "+actual,
                     expected, actual);
         }
         for (int i = 0; i < 10; i++) {
             int actual = actualList.get(i);
             int expected = expectedList.get(i);
-            assertEquals("ERROR in removeFirst()",
+            assertEquals("removeFirst(): "+actual,
                     expected, actual);
         }
 
@@ -60,13 +60,8 @@ public class TestArrayDequeGold {
             actualList.add(ads.removeLast());
             expectedList.add(sad.removeLast());
         }
-        int actual = ads.size();
-        int expected = sad.size();
-        assertEquals("ERROR in removeLast()" + actual
-                        + " not equal to " + expected + "!",
-                expected, actual);
         for (int i = 0; i < 10; i++) {
-            assertEquals("ERROR in removeLast()",
+            assertEquals("removeLast(): "+actualList.get(i),
                     expectedList.get(i), actualList.get(i));
         }
     }
