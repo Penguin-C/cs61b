@@ -15,7 +15,6 @@ public class TestArrayDequeGold {
             int random = StdRandom.uniform(100);
             ads.addLast(random);
             sad.addLast(random);
-            System.out.println("addLast(" + random + ")");
         }
         for (int i = 0; i < 10; i++) {
             int actual = ads.get(i);
@@ -28,7 +27,6 @@ public class TestArrayDequeGold {
             int random = StdRandom.uniform(100);
             ads.addFirst(random);
             sad.addFirst(random);
-            System.out.println("addFirst(" + random + ")");
         }
         for (int i = 0; i < 10; i++) {
             int actual = ads.get(i);
@@ -54,7 +52,6 @@ public class TestArrayDequeGold {
             int expected = expectedList.get(i);
             assertEquals("removeFirst(): " + actual,
                     expected, actual);
-            System.out.println("removeFirst()");
         }
 
         actualList.clear();
@@ -66,7 +63,6 @@ public class TestArrayDequeGold {
         for (int i = 0; i < 10; i++) {
             assertEquals("removeLast(): " + actualList.get(i),
                     expectedList.get(i), actualList.get(i));
-            System.out.println("removeLast()");
         }
     }
 }
